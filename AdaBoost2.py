@@ -456,7 +456,7 @@ def adaBoostCirc(points: np.ndarray, indices: np.ndarray, it: int) -> list:
             if guesses[j] != points[indices[j], 2]:
                 points[indices[j], 3] = points[indices[j], 3]*math.exp(alpha)
             else:
-                points[indices[j], 3] = points[indices[j], 3]*math.exp(alpha)
+                points[indices[j], 3] = points[indices[j], 3]*math.exp(-alpha)
             totalW += points[indices[j], 3]
         for j in range(0, 65):
             points[indices[j], 3] = points[indices[j], 3]/totalW
